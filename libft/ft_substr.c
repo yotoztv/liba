@@ -24,7 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (!(news = ft_calloc(sizeof(char), len + 1)))
 		return (NULL);
-	i = 0;
 	while (i < len)
 	{
 		news[i] = s[i + start];
