@@ -57,7 +57,7 @@ void				qt_nej(char **nej, unsigned int *lenx, char c)
 	}
 }
 
-char			**ft_malloc_error(char **mtrx)
+char				**ft_malloc_error(char **mtrx)
 {
 	unsigned int	i;
 

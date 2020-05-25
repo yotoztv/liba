@@ -14,25 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*news;
-	size_t	len_s;
-	size_t	i;
+	char		*news;
+	size_t		i;
 
+	i = 0;
 	if (s == 0)
 		return (NULL);
-	len_s = ft_strlen(s);
-	i = 0;
-	if (start > len_s)
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
-	while (s[i + start] != '\0' && i < len)
-		i++;
-	if (!(news = ft_calloc(sizeof(char), i + 1)))
+	if (!(news = ft_calloc(sizeof(char), len + 1)))
 		return (NULL);
 	i = 0;
-	while (s[i + start] != '\0' && i < len)
+	while (i < len)
 	{
 		news[i] = s[i + start];
 		i++;
 	}
+	news[i] = '\0';
 	return (news);
 }

@@ -12,9 +12,9 @@
 
 int	ft_atoi(char *str)
 {
-	int kik;
-	int i;
-	int m;
+	unsigned long	kik;
+	int				i;
+	int				m;
 
 	kik = 0;
 	i = 0;
@@ -29,9 +29,10 @@ int	ft_atoi(char *str)
 	else if (str[i] == '+')
 		i++;
 	while ((str[i] >= '0') && (str[i] <= '9'))
-	{
-		kik *= 10;
-		kik += str[i++] - '0';
-	}
-	return (kik * m);
+		kik = kik * 10 + str[i++] - '0';
+	if (m > 0 && kik > 9223372036854775807)
+		return (0);
+	if (m < 0 && kik > 9223372036854775807)
+		return (-1);
+	return ((int)(kik * m));
 }
